@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import WebKit
 
 class SecondViewController: UIViewController {
-
+    
+    @IBOutlet var webView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        let url = NSURL(string: "https://www.busybusy.com")!
+        webView.loadRequest(NSURLRequest(URL: url))
     }
 
     override func didReceiveMemoryWarning() {
